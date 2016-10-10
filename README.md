@@ -1,2 +1,30 @@
-# Markov-Speaking
-一个使用马尔科夫链算法构建中/英文语句的类，提供了解析文本和生成语言的接口
+# Markov Speaking （马尔科夫链随机文本生成）
+> This project is an package generating random sentences by markov chain. If you have any good ideas, please [contact me](mailto:forec@bupt.edu.cn), or open your PR. I feel honored to learn from your help.
+
+## Platform
+The `markov_speaking.py` is written in `Python 2.7`, using `jieba`, `codecs`, `random` and `re`. You need to install `jieba` by `pip2 install jieba`.
+
+## Usage
+* The `markov_speaking.py` provides a class `Markov`, the `init` of `Markov` is `__init__(self, filepath = None, mode = 0, coding="utf8")`. `filepath` is the file you want to parse, and the sentences the class build will base on this file. `mode` is 0 if you want to parse English, and 1 if Chinese. `coding` assigns the codec, default is UTF-8.
+* Let `p` be a instance of `Markov`, you can use `p.train(self, filepath = '', mode = 0, coding="utf8")` to regenerate the instance.
+* After you have built `p` and trained, you can use `p.say(length)` to generate a random sentence. The length is the max length of sentence to generate, default is 10.
+
+## Examples For Use
+You can download the Chinese novel `swords.txt` from [here](http://7xktmz.com1.z0.glb.clouddn.com/swords.txt), or English novel `The Standard Bearer` from [here](http://7xktmz.com1.z0.glb.clouddn.com/The_Standard_Bearer.txt).
+```python
+>>> import markov_speaking
+>>> p = markov_speaking.Markov('swords.txt', 1)
+Building prefix dict from the default dictionary ...
+Loading model from cache g:\cache\temp\jieba.cache
+Dumping model to file cache g:\cache\temp\jieba.cache
+Loading model cost 1.578 seconds.
+Prefix dict has been built succesfully.
+>>> p.say(5)
+令狐冲转身一剑劈向桃干仙。
+```
+
+## Update-logs
+* 2016-10-10: Add project and build repository.
+
+# License
+All codes in this repository are licensed under the terms you may find in the file named "LICENSE" in this directory.
