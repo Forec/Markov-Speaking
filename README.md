@@ -10,7 +10,7 @@ The `markov_speaking.py` is written in `Python 2.7`, using `jieba`, `codecs`, `r
 * After you have built `p` and trained, you can use `p.say(length)` to generate a random sentence. The length is the max length of sentence to generate, default is 10.
 
 ## Examples For Use
-You can download the Chinese novel 《笑傲江湖》 from [here](http://7xktmz.com1.z0.glb.clouddn.com/swords.txt), or English novel `The Standard Bearer` from [here](http://7xktmz.com1.z0.glb.clouddn.com/The_Standard_Bearer.txt).
+You can download the Chinese novel 《笑傲江湖》 from [here](http://7xktmz.com1.z0.glb.clouddn.com/swords.txt), or English novel 《The Standard Bearer》 from [here](http://7xktmz.com1.z0.glb.clouddn.com/The_Standard_Bearer.txt).
 ```python
 >>> import markov_speaking
 >>> p = markov_speaking.Markov('swords.txt', 1)
@@ -20,11 +20,12 @@ Dumping model to file cache /home/forec/cache
 Loading model cost 1.578 seconds.
 Prefix dict has been built succesfully.
 >>> p.say(5)
-令狐冲转身一剑劈向桃干仙。
+忽然想到一计说道师伯令狐师兄行侠仗义。
 ```
 
 ## Update-logs
 * 2016-10-10: Add project and build repository.
+* 2016-10-11: Fix problems in English part: Not split words by sentences.
 
 # License
 All codes in this repository are licensed under the terms you may find in the file named "LICENSE" in this directory.

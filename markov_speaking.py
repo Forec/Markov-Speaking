@@ -26,17 +26,18 @@ class Markov:
 				line = re.sub('[\r\n]', "", line)
 				if mode == 0:
 					sentences = eg_puncmark.split(line)
+					sentences_words = []
 					for sentence in sentences:
-						words.extend(sentence.split(" "))
-					words = filter(lambda x:x != '', words)
-					for i in range(len(words)-2):
-						keypair = words[i] + " " + words[i+1]
-						if keypair[0].isupper():
-							self.Cap.append(keypair)
-						if self.dic.get(keypair) is None:
-							self.dic[keypair] = [words[i+2]]
-						else:
-							self.dic[keypair].append(words[i+2])
+						sentences_words.append(filter(lambda x:x != '',sentence.split(" ")))
+					for words in sentences_words:
+						for i in range(len(words)-2):
+							keypair = words[i] + " " + words[i+1]
+							if keypair[0].isupper():
+								self.Cap.append(keypair)
+							if self.dic.get(keypair) is None:
+								self.dic[keypair] = [words[i+2]]
+							else:
+								self.dic[keypair].append(words[i+2])
 				else:
 					sentences = zh_puncmark.split(line)
 					for sentence in sentences:
@@ -86,4 +87,5 @@ class Markov:
 			if self.mode == 0:
 				print(sentence + ".")
 			else:
-				print(sentence + "。")
+				print(sentence + "。".decode("utf8"))
+		return sentence
