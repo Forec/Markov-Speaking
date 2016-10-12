@@ -16,6 +16,8 @@ class Markov:
 	def train(self, filepath = '', mode = 0, coding="utf8"):
 		self.dic = {}
 		self.Cap = []
+		self.mode = mode
+		self.coding = coding
 		if filepath is None or filepath == '':
 			return
 		eg_puncmark = re.compile('[\,\.\!\;\?\~\`\#\$\%\@\^&\*\(\)\]\[]')
