@@ -1,5 +1,5 @@
 # Markov Speaking （马尔科夫链随机文本生成）
-> This project is an package generating random sentences by markov chain. If you have any good ideas, please [contact me](mailto:forec@bupt.edu.cn), or open your PR. I feel honored to learn from your help.
+> This project is an package generating random sentences by markov chain. If you have any problems/ideas, please [email me](mailto:forec@bupt.edu.cn), or open your PR. I feel honored to learn from your help.
 
 ## Platform
 The `markov_speaking.py` is written in `Python 2.7`, using `jieba`, `codecs`, `random` and `re`. You need to install `jieba` by `pip2 install jieba`.
@@ -31,3 +31,6 @@ Prefix dict has been built succesfully.
 
 # License
 All codes in this repository are licensed under the terms you may find in the file named "LICENSE" in this directory.
+
+# 授权声明
+我已授权[实验楼](https://www.shiyanlou.com/)使用此仓库中的代码并发表此项目教程，你可以在这里查看对应的[教程](https://www.shiyanlou.com/courses/678)。
