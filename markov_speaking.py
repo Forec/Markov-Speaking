@@ -52,8 +52,6 @@ class Markov:
 							words = filter(lambda x:x != '', words)
 							for i in range(len(words)-2):
 								keypair = words[i] + " " + words[i+1]
-								if keypair[0].isupper():
-									self.Cap.append(keypair)
 								if self.dic.get(keypair) is None:
 									self.dic[keypair] = [words[i+2]]
 								else:

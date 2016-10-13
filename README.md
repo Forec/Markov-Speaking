@@ -27,6 +27,7 @@ Prefix dict has been built succesfully.
 * 2016-10-10: Add project and build repository.
 * 2016-10-11: Fix problems in English part: Not split words by sentences.
 * 2016-10-12: Fix train function.
+* 2016-10-13: Remove useless chinese upper condition.
 
 # License
 All codes in this repository are licensed under the terms you may find in the file named "LICENSE" in this directory.
